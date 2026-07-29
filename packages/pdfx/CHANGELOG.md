@@ -1,3 +1,12 @@
+## 2.9.3
+
+* Migrated the Android build to Built-in Kotlin, so the plugin no longer applies the Kotlin
+  Gradle Plugin (KGP). AGP 9 removes support for applying KGP explicitly, and current Flutter
+  versions warn that plugins doing so will fail to build. Kotlin is now provided by Flutter
+  (AGP < 9) or by AGP's built-in Kotlin (AGP >= 9), and `jvmTarget` moved from the removed
+  `kotlinOptions` block to the `kotlin.compilerOptions` DSL. Requires Flutter >= 3.44.0.
+  See https://docs.flutter.dev/release/breaking-changes/migrate-to-built-in-kotlin/for-plugin-authors
+
 ## 2.9.2
 
 * Fixed PdfViewPinch when compiling to WASM [pull#586](https://github.com/ScerIO/packages.flutter/pull/586)
